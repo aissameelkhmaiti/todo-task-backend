@@ -13,10 +13,12 @@ class TaskService
         $this->taskRepository = $taskRepository;
     }
 
-    public function getAll($userId)
-    {
-        return $this->taskRepository->allForUser($userId);
-    }
+
+
+        public function getAll()
+{
+    return $this->taskRepository->all(); 
+}
 
     public function getById($id, $userId)
     {

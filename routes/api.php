@@ -33,6 +33,7 @@ Route::middleware(['auth:api'])->group(function () {
 Route::middleware('auth:api')->group(function () {
     Route::get('/tasks', [TaskController::class, 'index']);
     Route::get('/tasks/{id}', [TaskController::class, 'show']);
+    Route::get('/tasks/all', [TaskController::class, 'indexAll']);
     Route::post('/tasks', [TaskController::class, 'store']);
     Route::put('/tasks/{id}', [TaskController::class, 'update']);
     Route::delete('/tasks/{id}', [TaskController::class, 'destroy']);

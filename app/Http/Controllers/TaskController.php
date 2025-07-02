@@ -16,14 +16,14 @@ class TaskController extends Controller
     }
 
     // Récupérer toutes les tâches de l'utilisateur connecté
-    public function index(Request $request)
-    {
-        $tasks = $this->taskService->getAll($request->user()->id);
-        return response()->json([
-            'success' => true,
-            'data' => $tasks
-        ]);
-    }
+        public function index(Request $request)
+{
+    $tasks = $this->taskService->getAll(); 
+    return response()->json([
+        'success' => true,
+        'data' => $tasks
+    ]);
+}
 
     // Récupérer une tâche spécifique
     public function show($id, Request $request)

@@ -5,11 +5,10 @@ use App\Models\Task;
 
 class TaskRepository implements TaskRepositoryInterface
 {
-    public function allForUser($userId)
-    {
-        return Task::where('user_id', $userId)->get();
-    }
-
+    public function all()
+{
+    return Task::all(); 
+}
     public function findById($id, $userId)
     {
         return Task::where('id', $id)->where('user_id', $userId)->firstOrFail();
